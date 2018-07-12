@@ -4,6 +4,8 @@ import com.example.thoma.applicationcodebarre.model.RoomBean;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class WebServiceUtils {
@@ -19,5 +21,11 @@ public class WebServiceUtils {
                 }.getType());
 
         return roomArrayList;
+    }
+
+    public static void addEquipment(JSONObject jsonObject) throws Exception {
+
+        OkHttpUtils.sendPostOkHttpRequest("http://192.168.40.26:8000/send-equipment", jsonObject.toString());
+
     }
 }

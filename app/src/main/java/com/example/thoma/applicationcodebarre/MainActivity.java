@@ -1,5 +1,6 @@
 package com.example.thoma.applicationcodebarre;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //data
     ArrayList<RoomBean> resultatRequete;
+
 
     //outils
     ArrayAdapter<RoomBean> dataAdapter;
@@ -52,7 +54,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
 
         if (v == validerSalle) {
-
+            String valeurSelect = choixSalle.getSelectedItem().toString();
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            intent.putExtra("SalleChoisie",valeurSelect);
+            startActivity(intent);
         }
     }
 
@@ -78,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             super.onPostExecute(roomBeans);
 
             if (e != null) {
-                Toast.makeText(MainActivity.this, "Chargement des salles echoués : " +  e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Chargement des salles echoués : " + e.getMessage(), Toast.LENGTH_SHORT).show();
             } else {
                 resultatRequete.clear();
                 resultatRequete.addAll(roomBeans);

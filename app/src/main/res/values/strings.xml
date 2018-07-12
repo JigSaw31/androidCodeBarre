@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ApplicationCodeBarre</string>
+    <string name="scan">Scan</string>
+    <string name="room">Salle Choisie</string>
+    <string name="equipment">Equipement scanné</string>
+    <string name="scan_qr_code">Scan QR Code</string>
 </resources>
