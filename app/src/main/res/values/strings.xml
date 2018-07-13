@@ -3,5 +3,5 @@
     <string name="scan">Scan</string>
     <string name="room">Salle Choisie</string>
     <string name="equipment">Equipement scanné</string>
-    <string name="scan_qr_code">Scan QR Code</string>
+    <string name="scan_qr_code">Scanner Code Barre</string>
 </resources>

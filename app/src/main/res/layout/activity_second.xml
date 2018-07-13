@@ -6,39 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".SecondActivity">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:layout_above="@+id/textViewEquipment2"
+        android:layout_alignParentStart="true"
+        android:text="@string/equipment" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewRoom2"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="-182dp"
+        android:text="@string/room" />
+
+    <TextView
+        android:id="@+id/textViewRoom2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:orientation="vertical">
+        android:layout_marginTop="182dp"
+        android:text=""
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/room" />
-
-        <TextView
-            android:id="@+id/textViewRoom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/equipment" />
-
-        <TextView
-            android:id="@+id/textViewEquipment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
-
-
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textViewEquipment2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="161dp"
+        android:text=""
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
     <Button
         android:id="@+id/buttonScan"

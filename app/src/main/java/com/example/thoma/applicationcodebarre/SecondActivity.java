@@ -23,6 +23,8 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
 
     private String selectedRoom;
 
+    private Button buttonScan;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +32,9 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_second);
 
         //View objects
-        Button buttonScan = (Button) findViewById(R.id.buttonScan);
-        textViewRoom = (TextView) findViewById(R.id.textViewRoom);
-        textViewEquipment = (TextView) findViewById(R.id.textViewEquipment);
+        buttonScan = (Button) findViewById(R.id.buttonScan);
+        textViewRoom = (TextView) findViewById(R.id.textViewRoom2);
+        textViewEquipment = (TextView) findViewById(R.id.textViewEquipment2);
 
         Intent intent = getIntent();
 
@@ -77,7 +79,11 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        qrScan.initiateScan();
+
+        if (v == buttonScan) {
+            qrScan.initiateScan();
+        }
+
     }
 
     public class MonAsyncTask extends AsyncTask {
