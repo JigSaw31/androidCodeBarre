@@ -10,11 +10,13 @@ import java.util.ArrayList;
 
 public class WebServiceUtils {
 
-    public static final Gson GSON = new Gson();
+    private static final String URL_BASE = "http://192.168.40.26:8000/";
+
+    private static final Gson GSON = new Gson();
 
     public static ArrayList<RoomBean> getRooms() throws Exception {
 
-        String jsonArrayListRoom = OkHttpUtils.sendGetOkHttpRequest("http://192.168.40.26:8000/rooms");
+        String jsonArrayListRoom = OkHttpUtils.sendGetOkHttpRequest(URL_BASE + "rooms");
 
         ArrayList<RoomBean> roomArrayList = GSON.fromJson(jsonArrayListRoom,
                 new TypeToken<ArrayList<RoomBean>>() {
@@ -25,7 +27,7 @@ public class WebServiceUtils {
 
     public static void addEquipment(JSONObject jsonObject) throws Exception {
 
-        OkHttpUtils.sendPostOkHttpRequest("http://192.168.40.26:8000/send-equipment", jsonObject.toString());
+        OkHttpUtils.sendPostOkHttpRequest(URL_BASE + "send-equipment", jsonObject.toString());
 
     }
 }
